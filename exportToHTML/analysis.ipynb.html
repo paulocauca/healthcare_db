@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>analysis.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+analysis.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">#%% md 
+</span><span class="s1"># Healthcare Data Breach Analysis (2009-2019) 
+ 
+**Author:** Paulo Cauca   
+**Country:** United States 
+ 
+--- 
+ 
+## Objective 
+ 
+The objective of this study is to conduct a detailed analysis of healthcare data breaches in the United States from 2009 to 2019. This study aims to identify patterns, trends, and main causes of these breaches, providing valuable insights for implementing better information security practices in the healthcare sector. 
+ 
+--- 
+ 
+## Executive Summary 
+ 
+In this study, we analyze data breaches in the healthcare sector in the United States during the period from 2009 to 2019. Through this analysis, we aim to identify the main trends and causes of these breaches, as well as their implications for the healthcare sector. 
+ 
+## Methodology 
+ 
+We used public data provided by the United States Department of Health and Human Services. The analysis includes categorizing the breaches by type, impact, and year, as well as identifying patterns and trends over the studied period. 
+ 
+## Results and Discussion 
+ 
+In this section, we will present the results obtained from the data analysis, including graphs, tables, and discussions on the main findings. Aspects such as the increase or decrease in breaches over the years, the most common types of breaches, and their main causes will be addressed. 
+ 
+## Conclusions 
+ 
+Based on the results obtained, the study's conclusions will highlight the main findings and their implications for the healthcare sector. Recommendations will be suggested to improve information security in healthcare organizations based on the observed trends. 
+ 
+--- 
+ 
+# Análise de Violação de Dados na Área de Saúde (2009-2019) 
+ 
+**Autor:** Paulo Cauca   
+**País:** Estados Unidos 
+ 
+--- 
+ 
+## Objetivo 
+ 
+O objetivo deste estudo é realizar uma análise detalhada das violações de dados na área de saúde ocorridas nos Estados Unidos entre 2009 e 2019. Este estudo visa identificar padrões, tendências e principais causas dessas violações, com o intuito de fornecer insights valiosos para a implementação de melhores práticas de segurança da informação no setor de saúde. 
+ 
+--- 
+ 
+## Resumo Executivo 
+ 
+Neste estudo, analisamos os dados de violações de dados na área de saúde nos Estados Unidos durante o período de 2009 a 2019. Através desta análise, buscamos identificar as principais tendências e causas dessas violações, bem como suas implicações para o setor de saúde. 
+ 
+## Metodologia 
+ 
+Utilizamos dados públicos disponibilizados pelo Departamento de Saúde e Serviços Humanos dos Estados Unidos. A análise inclui a categorização das violações por tipo, impacto e ano, bem como a identificação de padrões e tendências ao longo do período estudado. 
+ 
+## Resultados e Discussão 
+ 
+Nesta seção, apresentaremos os resultados obtidos com a análise dos dados, incluindo gráficos, tabelas e discussões sobre as principais descobertas. Serão abordados aspectos como o aumento ou diminuição das violações ao longo dos anos, os tipos de violações mais comuns e as suas principais causas. 
+ 
+## Conclusões 
+ 
+A partir dos resultados obtidos, serão apresentadas as conclusões do estudo, destacando os principais achados e suas implicações para o setor de saúde. Serão sugeridas recomendações para melhorar a segurança da informação nas organizações de saúde com base nas tendências observadas. 
+ 
+--- 
+ 
+## Data and Resources / Dados e Recursos 
+ 
+- **Source of Data / Fonte de Dados:** United States Department of Health and Human Services / Departamento de Saúde e Serviços Humanos dos Estados Unidos 
+- **Period / Período:** 2009 to 2019 / 2009 a 2019 
+- **Tools Used / Ferramentas Utilizadas:** Python, Pandas, Matplotlib, Seaborn 
+ 
+## Contact / Contato 
+ 
+For more information, contact Paulo Cauca via email: [contato@paulocauca.com](mailto:contato@paulocauca.com)   
+Para mais informações, entre em contato com Paulo Cauca via email: [contato@paulocauca.com](mailto:contato@paulocauca.com) 
+ 
+--- 
+ 
+**Note / Nota:** This study is for informational purposes and aims to contribute to improving information security in the healthcare sector. The data used are public domain and have been analyzed with the highest technical and scientific rigor.   
+**Nota:** Este estudo é de caráter informativo e visa contribuir para a melhoria da segurança da informação no setor de saúde. Os dados utilizados são de domínio público e foram analisados com o máximo de rigor técnico e científico. 
+ 
+</span><span class="s0">#%% md 
+</span><span class="s1"># Let's import the dataset and see inconsistencies on dataframe  
+</span><span class="s0">#%% md 
+</span><span class="s1">#### Import tools to work 
+</span><span class="s0">#%% 
+</span><span class="s2">import </span><span class="s1">pandas </span><span class="s2">as </span><span class="s1">pd</span>
+<span class="s2">import </span><span class="s1">numpy </span><span class="s2">as </span><span class="s1">np</span>
+<span class="s2">import </span><span class="s1">matplotlib</span><span class="s3">.</span><span class="s1">pyplot </span><span class="s2">as </span><span class="s1">plt</span>
+<span class="s2">import </span><span class="s1">seaborn </span><span class="s2">as </span><span class="s1">sns</span>
+<span class="s0">#%% md 
+</span><span class="s1">#### Import the dataset and create a dataframe  
+ 
+</span><span class="s0">#%% 
+</span><span class="s1">df </span><span class="s3">= </span><span class="s1">pd</span><span class="s3">.</span><span class="s1">read_csv</span><span class="s3">(</span><span class="s4">'files/data_breaches.csv'</span><span class="s3">)</span>
+<span class="s1">df</span><span class="s3">.</span><span class="s1">head</span><span class="s3">(</span><span class="s1">n</span><span class="s3">=</span><span class="s5">10</span><span class="s3">)</span>
+<span class="s0">#%% md 
+</span><span class="s1">#### Checking variables type  
+</span><span class="s0">#%% 
+</span><span class="s1">df</span><span class="s3">.</span><span class="s1">info</span><span class="s3">()</span>
+<span class="s0">#%% md 
+</span><span class="s1">#### Transforming column &quot;Breach Submission Date&quot; in datetime type  
+</span><span class="s0">#%% 
+</span><span class="s1">df</span><span class="s3">[</span><span class="s4">&quot;Breach Submission Date&quot;</span><span class="s3">] = </span><span class="s1">pd</span><span class="s3">.</span><span class="s1">to_datetime</span><span class="s3">(</span><span class="s1">df</span><span class="s3">[</span><span class="s4">&quot;Breach Submission Date&quot;</span><span class="s3">])</span>
+<span class="s1">df</span><span class="s3">.</span><span class="s1">info</span><span class="s3">()</span>
+<span class="s0">#%% md 
+</span><span class="s1">#### Check null values  
+</span><span class="s0">#%% 
+</span><span class="s1">df</span><span class="s3">.</span><span class="s1">isnull</span><span class="s3">().</span><span class="s1">sum</span><span class="s3">()</span>
+<span class="s0">#%% md 
+</span><span class="s1">#### Deleted null values from column Individuals Affected : 1 row affected  
+</span><span class="s0">#%% 
+</span><span class="s1">df</span><span class="s3">.</span><span class="s1">dropna</span><span class="s3">(</span><span class="s1">subset</span><span class="s3">=[</span><span class="s4">&quot;Individuals Affected&quot;</span><span class="s3">], </span><span class="s1">inplace</span><span class="s3">=</span><span class="s2">True</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s1">df</span><span class="s3">.</span><span class="s1">isnull</span><span class="s3">().</span><span class="s1">sum</span><span class="s3">()</span>
+<span class="s0">#%% md 
+</span><span class="s1">#### Check quantity dataset rows, if you see a column &quot;Web Description&quot; has null values , but it's not important to us right now. 
+</span><span class="s0">#%% 
+</span><span class="s1">df</span><span class="s3">.</span><span class="s1">count</span><span class="s3">()</span>
+<span class="s0">#%% md 
+</span><span class="s1">#### OK, now we are ready to go :-)   
+</span><span class="s0">#%% md 
+</span><span class="s1"># Let's plot some graphics and see how the values is distributed   
+</span><span class="s0">#%% 
+</span>
+<span class="s1">df</span><span class="s3">.</span><span class="s1">plot</span><span class="s3">.</span><span class="s1">hist</span><span class="s3">()</span></pre>
+</body>
+</html>
