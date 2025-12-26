@@ -66,11 +66,6 @@ A partir dos resultados obtidos, serão apresentadas as conclusões do estudo, d
 - **Period / Período:** 2009 to 2019 / 2009 a 2019
 - **Tools Used / Ferramentas Utilizadas:** Python, Pandas, Matplotlib, Seaborn
 
-## Contact / Contato
-
-For more information, contact Paulo Cauca via email: [contato@paulocauca.com](mailto:contato@paulocauca.com)  
-Para mais informações, entre em contato com Paulo Cauca via email: [contato@paulocauca.com](mailto:contato@paulocauca.com)
-
 ---
 
 **Note / Nota:** This study is for informational purposes and aims to contribute to improving information security in the healthcare sector. The data used are public domain and have been analyzed with the highest technical and scientific rigor.  
